@@ -1,4 +1,4 @@
-name: 'Facets Cloud Register'
+name: 'facetsctl Register Action'
 description: 'Registers docker images to Facets Cloud'
 inputs:
   username:
