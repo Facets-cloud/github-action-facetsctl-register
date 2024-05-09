@@ -1,0 +1,47 @@
+name: 'Facets Cloud Register'
+description: 'Registers docker images to Facets Cloud'
+inputs:
+  username:
+    description: 'Facets Cloud username'
+    required: true
+  token:
+    description: 'Facets Cloud token'
+    required: true
+  cp-url:
+    description: 'Control Plane URL'
+    required: true
+  docker-image:
+    description: 'Docker image URL in the external registry'
+    required: true
+  service:
+    description: 'Name of the CI integration for which the artifact needs to be registered'
+    required: true
+  external-id:
+    description: 'External identifier for artifact'
+    required: true
+  git-ref:
+    description: 'Git ref provided in CI Rule'
+  autodetect-git-ref:
+    description: 'Automatically detect Git reference if not provided'
+    required: false
+    default: 'true'
+  description:
+    description: 'Description of the build if any'
+    required: false
+  registry:
+    description: 'Artifactory where image will be pushed'
+    required: false
+  blueprint-name:
+    description: 'Blueprint name in which CI Integration will be created if not present already'
+    required: false
+  debug:
+    description: 'See original error message thrown'
+    required: false
+    default: 'false'
+  registration-type:
+    description: 'Mode of registration for CI integration'
+    required: false
+
+runs:
+  using: 'node12'
+  main: 'register-action.js'
