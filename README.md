@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Register Docker Image to Facets Cloud
-        uses: ./.github/actions/facets-cloud-register
+        uses: Facets-cloud/github-action-facetsctl-register@0.1.2-preview
         with:
           username: ${{ secrets.FACETS_USERNAME }}
           token: ${{ secrets.FACETS_TOKEN }}
